@@ -28,7 +28,7 @@ def calculate_grid_metrics(df: pd.DataFrame, value_col: str) -> Dict:
     }
 
 def plot_grid_intelligence(df: pd.DataFrame, value_col: str, title: str, output_path: Path):
- """Plot grid intelligence data """
+    """Plot grid intelligence data """
     fig, ax = plt.subplots(figsize=(10, 6))
     
     ax.plot(df.index, df[value_col], color="#4A90A4", linewidth=1.2)
