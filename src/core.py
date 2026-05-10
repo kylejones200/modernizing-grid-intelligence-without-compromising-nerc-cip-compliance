@@ -27,14 +27,15 @@ def calculate_grid_metrics(df: pd.DataFrame, value_col: str) -> Dict:
         'volatility': df[value_col].std() / df[value_col].mean()
     }
 
-def plot_grid_intelligence(df: pd.DataFrame, value_col: str, title: str, output_path: Path):
+def plot_grid_intelligence(df: pd.DataFrame, value_col: str, title: str, output_path: Path, plot: bool = False):
     """Plot grid intelligence data """
-    fig, ax = plt.subplots(figsize=(10, 6))
+    if plot:
+        fig, ax = plt.subplots(figsize=(10, 6))
     
-    ax.plot(df.index, df[value_col], color="#4A90A4", linewidth=1.2)
-    ax.set_xlabel("Time")
-    ax.set_ylabel("Value")
+        ax.plot(df.index, df[value_col], color="#4A90A4", linewidth=1.2)
+        ax.set_xlabel("Time")
+        ax.set_ylabel("Value")
     
-    plt.savefig(output_path, dpi=100, bbox_inches="tight")
-    plt.close()
+        plt.savefig(output_path, dpi=100, bbox_inches="tight")
+        plt.close()
 
