@@ -28,16 +28,16 @@ Edit `config.yaml` to customize:
 ## NERC CIP Compliance
 
 NERC CIP standards:
-- **CIP-002**: BES Cyber System Categorization
-- **CIP-003**: Security Management Controls
-- **CIP-004**: Personnel & Training
-- **CIP-005**: Electronic Security Perimeters
-- **CIP-006**: Physical Security
-- **CIP-007**: Systems Security Management
-- **CIP-008**: Incident Reporting
-- **CIP-009**: Recovery Plans
-- **CIP-010**: Configuration Change Management
-- **CIP-011**: Information Protection
+- CIP-002: BES Cyber System Categorization
+- CIP-003: Security Management Controls
+- CIP-004: Personnel & Training
+- CIP-005: Electronic Security Perimeters
+- CIP-006: Physical Security
+- CIP-007: Systems Security Management
+- CIP-008: Incident Reporting
+- CIP-009: Recovery Plans
+- CIP-010: Configuration Change Management
+- CIP-011: Information Protection
 
 ## Caveats
 
