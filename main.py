@@ -18,7 +18,7 @@ def load_config(config_path: Path = None) -> dict:
     if config_path is None:
         config_path = Path(__file__).parent / 'config.yaml'
     
-    with open(config_path, 'r') as f:
+    with open(config_path) as f:
         return yaml.safe_load(f)
 
 def main():
@@ -48,7 +48,7 @@ def main():
         raise ValueError("No data source specified")
     
         metrics = calculate_grid_metrics(df, config['data']['value_column'])
-    logging.info(f"\nGrid Metrics:")
+    logging.info("\nGrid Metrics:")
     logging.info(f"Mean: {metrics['mean']:.2f}")
     logging.info(f"Volatility: {metrics['volatility']:.4f}")
     

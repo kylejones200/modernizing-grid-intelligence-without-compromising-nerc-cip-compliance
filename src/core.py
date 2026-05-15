@@ -1,9 +1,7 @@
 """Core functions for modernizing grid intelligence with NERC CIP compliance."""
 
-import numpy as np
 import pandas as pd
 from pathlib import Path
-from typing import Dict
 import matplotlib.pyplot as plt
 import logging
 
@@ -17,7 +15,7 @@ def analyze_grid_data(df: pd.DataFrame, timestamp_col: str, value_col: str) -> p
     df = df.set_index(timestamp_col)
     return df
 
-def calculate_grid_metrics(df: pd.DataFrame, value_col: str) -> Dict:
+def calculate_grid_metrics(df: pd.DataFrame, value_col: str) -> dict:
     """Calculate grid performance metrics."""
     return {
         'mean': df[value_col].mean(),
