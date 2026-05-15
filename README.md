@@ -1,5 +1,9 @@
 # Modernizing Grid Intelligence with NERC CIP
 
+Published: yes
+Medium: [https://medium.com/@kyle-t-jones/modernizing-grid-intelligence-without-compromising-nerc-cip-compliance-d6690654dab2](https://medium.com/@kyle-t-jones/modernizing-grid-intelligence-without-compromising-nerc-cip-compliance-d6690654dab2)
+
+
 This project demonstrates modernizing grid intelligence systems with NERC CIP (Critical Infrastructure Protection) compliance.
 
 ## Project Structure
