@@ -48,3 +48,11 @@ NERC CIP standards:
 - By default, generates synthetic grid data.
 - Full NERC CIP compliance requires comprehensive security implementation.
 - Real-world deployment requires additional security measures.
+
+## Disclaimer
+
+Educational/demo code only. Not financial, safety, or engineering advice. Use at your own risk. Verify results independently before any production or operational use.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
