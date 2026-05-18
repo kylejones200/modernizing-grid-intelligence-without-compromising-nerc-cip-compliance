@@ -18,7 +18,7 @@ logging.basicConfig(
 )
 
 
-def load_config(config_path: Path = None) -> dict:
+def load_config(config_path: Path | None = None) -> dict:
     """Load configuration from YAML file."""
     if config_path is None:
         config_path = Path(__file__).parent / "config.yaml"
@@ -39,7 +39,6 @@ def main():
         "--output-dir", type=Path, default=None, help="Output directory"
     )
     args = parser.parse_args()
-
     config = load_config(args.config)
     output_dir = (
         Path(args.output_dir)
@@ -47,7 +46,6 @@ def main():
         else Path(config["output"]["figures_dir"])
     )
     output_dir.mkdir(exist_ok=True)
-
     if args.data_path and args.data_path.exists():
         df = pd.read_csv(args.data_path)
         df = analyze_grid_data(
@@ -74,12 +72,10 @@ def main():
         )
     else:
         raise ValueError("No data source specified")
-
         metrics = calculate_grid_metrics(df, config["data"]["value_column"])
     logging.info("\nGrid Metrics:")
     logging.info(f"Mean: {metrics['mean']:.2f}")
     logging.info(f"Volatility: {metrics['volatility']:.4f}")
-
     if config["nerc_cip"]["compliance_check"]:
         plot_grid_intelligence(
             df,
