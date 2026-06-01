@@ -1,0 +1,9 @@
+[package]
+name = "modernizing_grid_intelligence_without_compromising_nerc_cip_compliance_core"
+description = "Composite asset risk score from age, criticality, and exposure"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+path = "src/lib.rs"

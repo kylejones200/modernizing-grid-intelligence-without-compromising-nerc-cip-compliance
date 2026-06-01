@@ -1,0 +1,13 @@
+[package]
+name = "modernizing_grid_intelligence_without_compromising_nerc_cip_compliance_bench"
+description = "Standalone Rust benchmark (no Python)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "bench"
+path = "src/main.rs"
+
+[dependencies]
+modernizing_grid_intelligence_without_compromising_nerc_cip_compliance_core = { path = "../core" }

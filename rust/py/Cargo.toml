@@ -1,0 +1,15 @@
+[package]
+name = "modernizing_grid_intelligence_without_compromising_nerc_cip_compliance_rs"
+description = "Python bindings (PyO3) for modernizing_grid_intelligence_without_compromising_nerc_cip_compliance_core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+name = "modernizing_grid_intelligence_without_compromising_nerc_cip_compliance_rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+modernizing_grid_intelligence_without_compromising_nerc_cip_compliance_core = { path = "../core" }
+pyo3 = { version = "0.28", features = ["extension-module"] }
+numpy = "0.28"

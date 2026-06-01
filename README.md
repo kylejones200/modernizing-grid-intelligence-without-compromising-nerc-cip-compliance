@@ -27,7 +27,10 @@ Historically, these dual pressures have pulled in opposite directions. Complianc
 │   └── plotting.py    # Tufte-style plotting utilities
 ├── tests/             # Unit tests
 ├── data/              # Data files
-└── images/            # Generated plots and figures
+├── images/            # Generated plots and figures
+├── rust/                   # Rust port (core + PyO3 + CLI bench)
+├── benchmark_rust.py       # Python vs Rust benchmark
+├── src/compute_kernel.py   # Python/numpy reference kernel
 ```
 
 ## Configuration
@@ -56,6 +59,31 @@ NERC CIP standards:
 - By default, generates synthetic grid data.
 - Full NERC CIP compliance requires comprehensive security implementation.
 - Real-world deployment requires additional security measures.
+
+## Rust performance port
+
+Side-by-side **Python vs Rust** implementation of the numeric hot loop — asset risk scoring. Reference PyO3 benchmark: **see `benchmark_rust.py`** on a release build (local machine; run `benchmark_rust.py` to reproduce).
+
+| Path | Role |
+|------|------|
+| `src/compute_kernel.py` | Python/numpy reference kernel |
+| `rust/core/` | Pure Rust library |
+| `rust/py/` | PyO3 bindings |
+| `rust/bench/` | Standalone CLI benchmark |
+| `benchmark_rust.py` | Python vs Rust timing + correctness check |
+
+```bash
+# Rust-only CLI benchmark
+cd rust && cargo run --release -p modernizing_grid_intelligence_without_compromising_nerc_cip_compliance_bench
+
+# Python vs Rust (PyO3)
+pip install maturin numpy
+maturin develop --release -m rust/py/Cargo.toml
+python benchmark_rust.py
+```
+
+Python ML training, solvers, and orchestration stay in Python; Rust targets the numeric hot loops. Stochastic generators validate output shapes; deterministic kernels match at tight floating-point tolerance.
+
 
 ## Disclaimer
 
